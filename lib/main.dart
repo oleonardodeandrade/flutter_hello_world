@@ -9,10 +9,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'My App',
-        textDirection: TextDirection.rtl,
+    return const MaterialApp(
+      home: Homepage(),
+    );
+  }
+}
+
+class Homepage extends StatelessWidget {
+  const Homepage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Material(
+      child: Center(
+        child: Text(
+          'My App',
+          textDirection: TextDirection.rtl,
+        ),
       ),
     );
   }
