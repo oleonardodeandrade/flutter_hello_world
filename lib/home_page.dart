@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/home_controller.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    var controller = HomeController.of(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home'),
       ),
-      body: const Center(
+      body: Center(
         child: Text(
-          'My App',
-          textDirection: TextDirection.rtl,
+          'Flutterando ${controller.value}',
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // ignore: avoid_print
-          print('clicked');
+          controller.increment();
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
